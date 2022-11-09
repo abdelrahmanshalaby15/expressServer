@@ -5,7 +5,7 @@ const port = 5555;
 app.get("/", (req, res) => {
   var host = req.get("host");
   // console.log(req.headers);
-  var origin = req.baseUrl;
+  var origin = req.hostname;
   console.log(origin);
   res.send(
     `${req.originalUrl} - ${origin} - ${host} - ${req.socket.remoteAddress} - ${req.headers["x-forwarded-for"]}`
